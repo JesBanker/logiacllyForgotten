@@ -1,6 +1,6 @@
 		
 body.default{
-	max-width: 700px;
+	max-width: 1200px;
 	font-size: clamp(16px, 4vw, 18px);
 	font-family: courier , serif;
 	line-height: 1.5;
@@ -12,9 +12,14 @@ body.default{
 		
 body.default a {
 	display: block;
-	margin: 10px 0;
 	text-decoration: none;
 	color: #f2e3d8;
+}
+
+body.default p,
+body.default a {
+    margin: 10px 0;
+
 }
 		
 body.default a:hover {
@@ -77,4 +82,29 @@ body.default .aR p {
     border: 1px solid #f2e3d8;
     padding: 5px 10px;
     cursor: pointer;
+}
+
+body.default .line {
+    display: flex;
+    align-items: flex-end;
+}
+
+body.default .left {
+    flex: 1;
+    text-align: left;
+}
+
+body.default .center {
+    flex: 1;
+	margin-left: -30%; 
+    text-align: center;
+}
+
+body.default .right {
+    margin-left: auto;
+    text-align: right;
+}
+
+.left, .center, .right {
+    margin: 0;   /* ⭐ remove vertical margin */
 }
