@@ -5,7 +5,12 @@
         body {
 			background-color: #000000;
 			color: #f2e3d8;
-			front-size: 16px;
+			
+			/* Font stays at 16px until the screen grows, 
+			then scales at 2% of screen width, 
+			but stops growing at 24px */
+			font-size: clamp(16px, 1vw + 10px, 20px);
+			
 			margin: 0px auto;
 			font-family: courier, monospace;
 			line-height: 1.2;
@@ -25,7 +30,22 @@
 			border: solid;
 			*/
 		}
-
+		
+		p span.voice {
+			font-style: italic;
+			opacity: 0.8;
+			/*
+			padding-left: 10px;
+			*/
+		}
+		
+		hr {
+			border: 0;
+			border-top: 1px solid #f2e3d8; /* 使用你的文字顏色 */
+			margin: 20px 0; /* 增加上下間距，讓文字有呼吸空間 */
+			opacity: 0.5;   /* 稍微透明一點點，更有高級感 */
+		}
+		
 		
     </style>
   </head>
@@ -41,6 +61,22 @@
       仍...沒了.<br>
       同時間.<br>
       沒了.<br>
+	  <br>
+	</p>
+	</div>
+	<hr>
+	<div class ="max1200">
+	 <p>
+		平靜, 應該是. <span class="voice">"說話了."</span><br>
+		不. <br>
+		...對. <br>
+		不對. <br> 
+		<span class="voice">"他沒回."</span><br>
+		...對. <br>
+		不對! <br>
+		你對. <br>
+		不平, 確實是.  <span class ="voice">"說不出."</span><br>
+	  <br>
     </p>
 	</div>
   </body>  
