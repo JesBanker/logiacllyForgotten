@@ -91,7 +91,7 @@
 		
 		.date {
 			float: right;
-			color; rgba(242, 227, 216, 0.5);
+			color: rgba(252, 237, 226, 0.40);
 			padding-right: 20px;
 		}
 		
@@ -99,11 +99,15 @@
 			opacity: 0.25;
 		}
 		
+		.opX {
+			opacity: var(--op, 1);
+		}
+		
 		
     </style>
   </head>
   <body>
-	<div class="max1200 Boborder"><h1>Temp... how do you find here?</h1></div>
+	<div class="max1200 noBorder"><h1>Temp... how do you find here?</h1></div>
     <hr>
 	<div class="max1200">
     <p>
@@ -136,7 +140,7 @@
 	<div class="max1200">
 		<p class = "lNRText">
 			<span>『滑動』</span>
-			<span class= "right rPadding"> 23/04/26</span>
+			<span class= "opX rPadding" style="--op: 0.4;"> 23/04/26</span>
 		</p>
 			<!--<hr style="margin-left: 0px; opacity: 0.5;"> -->
 			<hr class="op25"> 
