@@ -232,6 +232,14 @@ body.default .aR p {
 {
 	margin: 0;
 }
+.opacity1{
+	opacity: 1;
+}
+
+
+.normal{
+	font-weight: normal;
+}
 
 /*
 .noMargin h1,
