@@ -4,15 +4,24 @@
 	--main-rgb: 242, 227, 216;
 }
 
+h1, h2, h3, p , a{
+    margin: 0;
+}
+hr {
+    border: 0;
+    border-top: 1px solid rgb(var(--main-rgb));
+    margin-bottom: 2ch;              
+}
+
 body.default{
 	max-width: 1200px;
 	font-size: clamp(16px, 4vw, 18px);
-	font-family: courier , serif;
-	line-height: 1.5;
+	font-family: courier , monospace;
+	line-height: 1.3;
 	color: rgb(var(--main-rgb));
 	background-color: #000;
-	padding: 0 16px;
-    margin: 40px auto;
+	padding: 40px 16px;
+    margin: 0 auto;
 }
 		
 body.default a {
@@ -21,13 +30,29 @@ body.default a {
 	font-weight: bold;
 	color: rgb(var(--main-rgb));
 	/*color: #f2e3d8;*/
-}1
-
-body.default p,
-body.default a {
-    margin: 10px 0;
-
 }
+
+.italic{
+	font-style: italic;
+}
+
+.bold{
+	font-weight: bold;
+}
+
+.lighter{
+	font-weight: lighter;
+}
+
+.bolder{
+	font-weight: bolder;
+}
+
+.oBit{
+	opacity: 0.85;
+}
+
+
 		
 body.default a:hover {
 	text-decoration: underline;
@@ -38,7 +63,6 @@ body.default p {
 }
 			
 body.default .c p{
-	margin: 0;
 	text-align: justify;
 }
 
@@ -92,6 +116,27 @@ body.default .aR p {
     padding: 5px 10px;
     cursor: pointer;
 }
+.lineSpace {
+	box-sizing: border-box;
+	
+    display: flex;
+    width: 100%;
+    flex-wrap: wrap;
+    align-items: flex-end;
+    justify-content: space-between;
+
+    overflow-wrap: break-word; 
+    word-break: normal;        
+    hyphens: auto;          
+}
+
+.noLHeight{
+	line-height: 1;
+}
+
+.rLHeight{
+	line-height: 1.2;
+}
 
 .listLine {
     display: flex;
@@ -101,14 +146,18 @@ body.default .aR p {
 	overflow-wrap: break-word;
 	word-break: break-all;
 	justify-content: space-between;
+	gap: 0;
 }
 
-.listLine a{margin: 0 !important;}
+.title{
+	flex: 1 1 auto;
+}
 
 
-.left   { flex: 1; min-width: 0; text-align: left; }
-.center { flex: 1; min-width: 0; text-align: center; }
-.right  { flex: 1; min-width: 0; text-align: right; }
+
+.left   { flex: var(--leftF, 1); min-width: 0; text-align: left; }
+.center { flex: var(--centerF, 1); min-width: 0; text-align: center; }
+.right  { flex: var(--right, 1); min-width: 0; text-align: right; }
 
 .listLine .left{flex: 2;}
 .listLine .center{flex: 6;}
@@ -173,4 +222,21 @@ body.default .aR p {
 	opacity: 0.5;
 }
 
+.right.date{
+	flex: 0 0 auto;
+	padding-left: 2ch;
+	/*white-space: nowrap*/
+}
 
+.noMargin
+{
+	margin: 0;
+}
+
+/*
+.noMargin h1,
+.noMargin a,
+.noMargin p{
+	margin: 0;
+}
+*/
