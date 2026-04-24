@@ -1,8 +1,5 @@
 :root {
 	/* 定義全站的主色調 (RGB 數值) */
-	--main-r: 242;
-	--main-g: 227;
-	--main-b: 216;
 	--main-padR: 20px;
 	--main-rgb: 242, 227, 216;
 }
@@ -96,7 +93,7 @@ body.default .aR p {
     cursor: pointer;
 }
 
-.line {
+.listLine {
     display: flex;
 	width: 100%;
 	flex-wrap: wrap; /*allow jump line*/
@@ -106,12 +103,18 @@ body.default .aR p {
 	justify-content: space-between;
 }
 
-.line a{margin: 0 !important;}
+.listLine a{margin: 0 !important;}
 
 
-.left   { flex: 2; min-width: 0; text-align: left; }
-.center { flex: 6; min-width: 0; text-align: center; }
-.right  { flex: 2; min-width: 0; text-align: right; }
+.left   { flex: 1; min-width: 0; text-align: left; }
+.center { flex: 1; min-width: 0; text-align: center; }
+.right  { flex: 1; min-width: 0; text-align: right; }
+
+.listLine .left{flex: 2;}
+.listLine .center{flex: 6;}
+.listLine .right{flex: 2;}
+
+
 
 .align-lCR{
 	flex: var(--flex, 1);
@@ -129,7 +132,7 @@ body.default .aR p {
 		}
 
 @media (max-width: 600px) {
-    .line {
+    .listLine {
 		line-height: 1.2 !important;
         display: flex !important;
         flex-wrap: wrap !important;
@@ -137,7 +140,7 @@ body.default .aR p {
 
     /* 1. 真正的「第一行」：標題 */
     /* 假設它是 .line 的第一個子元素 */
-    .line > *:nth-child(1) {
+    .listLine > *:nth-child(1) {
 		font-size: clamp(18px, 4vw, 20px);
         flex: 0 0 100% !important;
         width: 100% !important;
@@ -145,7 +148,7 @@ body.default .aR p {
     }
 
     /* 2. 你的「說明」：現在它是第二行的左邊 */
-    .left {
+    .listLine > *:nth-child(2) {
         flex: 1 1 auto !important; /* 讓它變回自動寬度 */
         width: auto !important;    /* 覆蓋掉 100% */
         min-width: 0 !important;
@@ -153,11 +156,19 @@ body.default .aR p {
     }
 
     /* 3. 你的「日期」：第二行的右邊 */
-    .right {
+	.listLine > *:nth-child(3) {
         flex: 0 0 auto !important;
         width: auto !important;
         white-space: nowrap !important;
         text-align: right !important;
         padding-left: 10px;
-    }
+	}
+}
+
+.opacity {
+	opacity: var(--op,1);
+}
+
+.date {
+	opacity: 0.5;
 }

@@ -10,11 +10,13 @@
 			--main-r: 242;
 			--main-g: 227;
 			--main-b: 216;
-			--main-padR: 20px:
+			--main-padR: 20px;
 			--main-rgb: 242, 227, 216;
+			--main-secColor: 54, 41, 37;
 		}
 		
 		body {
+			overflow-x: hidden;
 			background-color: #000000;
 			color: rgb(var(--main-r), var(--main-g), var(--main-b));
 			
@@ -57,6 +59,10 @@
 			/*
 			border: solid;
 			*/
+		}
+		
+		.max1200 hr{
+			opacity: 0.25;
 		}
 		
 		.noBorder h1 {
@@ -108,15 +114,67 @@
 			opacity: 0.25;
 		}
 		
+		.opacity {
+			opacity: var(--op,1);
+		}
+		
 		.c_rgba { /*color rgba*/
 			/* 加上透明度，顏色會自動跟隨主色調 */
 			color: rgba(
-			var(--rgb , --main-rgb),
+			var(--rgb , var(--main-rgb, 255,255,255)),
 			var(--a, 1)
 			);
 		}		
 		
+		.game-container{
+			width: 100vw;
+			max-height: 80vh;
+
+			aspect-ratio: 480 / 360;
+
+			background: rgba(var(--main-rgb, 0, 0, 0), 0.1);
+			box-sizing: border-box;
+			padding-bottom: 40px;
+			
+			position: relative;
+			left: 50%;
+			right: 50%;
+			margin-left: -50vw;
+			margin-right: -50vw;
+			
+			padding-left: calc((100vw - 1080px) / 2);
+			padding-right: calc((100vw - 1080px) / 2);
+		}
 		
+		.game-container iframe{
+			width: 100%;
+			height: 100%;
+			border: 0;
+			display: block;
+			
+			
+		}
+		
+		@media (max-width: 600px) {
+			.game-container {
+			/* 1. 修正拼字並調整間距 */
+			padding-left: 1vw;
+			padding-right: 1vw; /* 修正為 g */
+        
+			/* 2. 調整高度，確保在手機上不會太長 */
+			max-height: 70vh;
+        
+			/* 3. 如果你用了 100vw 破框法，記得這裡也要維持 */
+			width: 100vw;
+			margin-left: -50vw;
+			left: 50%;
+        
+			/* 4. 移除圓角（如果你之前有設的話，手機版通常直角比較滿） */
+			border-radius: 0;
+			}
+		}
+		
+
     </style>
   </head>
   <body>
@@ -172,13 +230,26 @@
 			<span class = "voice">“得去睡了。”</span>
 		</p>
 	</div>
-		<br>
+	<br>
+	<hr>
+	<div class ="max1200">
+		<p>
+			test
+			<span class="date" style="--padR: 60px;">Rtest</span>
+		</p>
+	</div>
+	<br>
+	<hr>
+	<div class="max1200">
+		<span class="noBorder"><h1>scrathch 3D i trying to</h1></span>
 		<hr>
-		<div class ="max1200">
-			<p>
-				test
-				<span class="date" style="--padR: 60px;">Rtest</span>
-			</p>
+		<div class="game-container">
+			<iframe src="noWhatCopy.html" title="S3D test"  loading="lazy"></iframe>
 		</div>
+		<hr>
+	</div>
+	<br>
+	<hr>
+		
   </body>  
 </html>
