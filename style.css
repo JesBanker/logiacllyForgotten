@@ -149,6 +149,20 @@ body.default .aR p {
 	gap: 0;
 }
 
+.sound{
+	font-style: italic;
+	font-weight: lighter;
+}
+
+.describe{
+	font-style: italic;
+	font-weight: lighter;
+}
+
+.voice{
+	font-style: normal;
+}
+
 .title{
 	flex: 1 1 auto;
 }
