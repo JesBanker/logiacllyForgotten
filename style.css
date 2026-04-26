@@ -2,6 +2,7 @@
 	/* 定義全站的主色調 (RGB 數值) */
 	--main-padR: 20px;
 	--main-rgb: 242, 227, 216;
+	--describe-rgb: 192, 172, 166;
 }
 
 h1, h2, h3, p , a{
@@ -156,7 +157,7 @@ body.default .aR p {
 
 .describe{
 	font-style: italic;
-	font-weight: lighter;
+	color: rgb(var(--describe-rgb, 192, 172, 166));
 }
 
 .voice{
@@ -176,6 +177,15 @@ body.default .aR p {
 .listLine .left{flex: 2;}
 .listLine .center{flex: 6;}
 .listLine .right{flex: 2;}
+.listLine .left.describe {
+	flex: 6;
+	font-style: normal;
+	font-weight: normal;
+}
+.listLine .left.title {
+	flex: 2;
+	align-self: flex-start;
+}
 
 
 
@@ -225,6 +235,7 @@ body.default .aR p {
         white-space: nowrap !important;
         text-align: right !important;
         padding-left: 10px;
+		margin-left: auto;
 	}
 }
 
