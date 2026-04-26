@@ -137,6 +137,24 @@ body.default .aR p {
     word-break: normal;        
     hyphens: auto;          
 }
+.fixable{
+	flex: 1 1 auto;
+}
+
+.cimg.fixed{
+	flex: 0 0 auto;
+}
+
+.cimg img {
+    max-width: 100%;  
+    height: auto;
+}
+
+.small.cimg img{
+	max-height: 250px;
+	width: auto;
+}
+
 
 .noLHeight{
 	line-height: 1;
