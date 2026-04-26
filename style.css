@@ -141,18 +141,26 @@ body.default .aR p {
 	flex: 1 1 auto;
 }
 
+/*
 .cimg.fixed{
 	flex: 0 0 auto;
 }
+*/
 
 .cimg img {
-    max-width: 100%;  
+    max-width: 80%;  
     height: auto;
 }
 
 .small.cimg img{
 	max-height: 250px;
 	width: auto;
+}
+
+.cimg.fixed img {
+    width: 100%;             /* 強制圖片縮小到容器的寬度 */
+    height: auto;
+    display: block;
 }
 
 
