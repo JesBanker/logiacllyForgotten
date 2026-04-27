@@ -14,6 +14,12 @@ hr {
     margin-bottom: 2ch;              
 }
 
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+}
+
 body.default{
 	width: 95%;
 	max-width: 1200px;
@@ -137,32 +143,6 @@ body.default .aR p {
     word-break: normal;        
     hyphens: auto;          
 }
-.fixable{
-	flex: 1 1 auto;
-}
-
-/*
-.cimg.fixed{
-	flex: 0 0 auto;
-}
-*/
-
-.cimg img {
-    max-width: 80%;  
-    height: auto;
-}
-
-.small.cimg img{
-	max-height: 250px;
-	width: auto;
-}
-
-.cimg.fixed img {
-    width: 100%;             /* 強制圖片縮小到容器的寬度 */
-    height: auto;
-    display: block;
-}
-
 
 .noLHeight{
 	line-height: 1;
@@ -221,6 +201,41 @@ body.default .aR p {
 	align-self: flex-start;
 }
 
+.imgLine{
+    display: flex;
+	width: 100%;
+	flex-wrap: wrap; /*allow jump line*/
+    align-items: flex-start;
+	overflow-wrap: break-word;
+	word-break: break-all;
+	justify-content: space-between;
+	gap: 0;
+
+	border-bottom: 1px solid rgb(var(--main-rgb, 255, 255, 255), 0.5);
+}
+
+
+.imgLine .left.title{flex: 0 50%; width: fit-content;}
+.imgLine .left.title img {
+    max-width: 100%; 
+    min-width: 250px;
+	width: 100%;
+    height: auto;
+    display: block;
+}
+.imgLine .describe {
+    flex: 1; 
+	min-width: 0;
+}
+
+.imgLine .date.right {
+	margin-left: auto;
+	white-space: nowrap;
+    flex: 0 0 auto;
+    margin-left: 10px;
+	text-align: right;
+}
+
 
 
 .align-lCR{
@@ -264,6 +279,47 @@ body.default .aR p {
 
     /* 3. 你的「日期」：第二行的右邊 */
 	.listLine > *:nth-child(3) {
+        flex: 0 0 auto !important;
+        width: auto !important;
+        white-space: nowrap !important;
+        text-align: right !important;
+        padding-left: 10px;
+		margin-left: auto;
+	}
+	
+	.imgLine {
+		line-height: 1.2 !important;
+        display: flex !important;
+        flex-wrap: wrap !important;
+    }
+
+    /* 1. 真正的「第一行」：標題 */
+    /* 假設它是 .line 的第一個子元素 */
+    .imgLine > *:nth-child(1) {
+		font-size: clamp(18px, 4vw, 20px);
+		min-width: 0px !important;
+        flex: 0 0 50% !important;
+		margin: 0 auto;
+        width: 100% !important;
+        /*margin-bottom: 5px;*/
+    }
+	
+	    .imgLine > *:nth-child(1) img {
+		min-width: 0px !important;
+
+    }
+	
+
+    /* 2. 你的「說明」：現在它是第二行的左邊 */
+   .imgLine > *:nth-child(2) {
+        flex: 1 1 auto !important; /* 讓它變回自動寬度 */
+        width: auto !important;    /* 覆蓋掉 100% */
+        min-width: 0 !important;
+        text-align: left !important;
+    }
+
+    /* 3. 你的「日期」：第二行的右邊 */
+	.imgLine > *:nth-child(3) {
         flex: 0 0 auto !important;
         width: auto !important;
         white-space: nowrap !important;
